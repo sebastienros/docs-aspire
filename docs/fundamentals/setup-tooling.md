@@ -1,7 +1,7 @@
 ---
 title: .NET Aspire tooling
 description: Learn about essential tooling concepts for .NET Aspire.
-ms.date: 02/09/2024
+ms.date: 02/22/2024
 ---
 
 # .NET Aspire setup and tooling
@@ -48,22 +48,27 @@ To install the .NET Aspire workload in Visual Studio 2022 Preview, use the Visua
 
    :::image type="content" source="../media/install-aspire-workload-visual-studio.png" lightbox="../media/install-aspire-workload-visual-studio.png" alt-text="A screenshot showing how to install the .NET Aspire workload with the Visual Studio installer.":::
 
-1. To ensure you install the latest version of .NET Aspire, run these commands:
+1. To ensure that you install the latest version of the .NET Aspire workload, run the following [dotnet workload update](/dotnet/core/tools/dotnet-workload-update) command before you install .NET Aspire:
 
-   ```dotnetcli
-   dotnet workload update
-   dotnet workload install aspire
-   ```
+    ```dotnetcli
+    dotnet workload update
+    ```
+
+1. To install the .NET Aspire workload from the .NET CLI, use the [dotnet workload install](/dotnet/core/tools/dotnet-workload-install) command:
+
+    ```dotnetcli
+    dotnet workload install aspire
+    ```
 
 1. To check your version of .NET Aspire, run this command:
 
-   ```dotnetcli
-   dotnet workload list
-   ```
+    ```dotnetcli
+    dotnet workload list
+    ```
 
 # [.NET CLI](#tab/dotnet-cli)
 
-To ensure that you install the latest version of the .NET Aspire workload, it's best to use the following [dotnet workload update](/dotnet/core/tools/dotnet-workload-update) command before you install .NET Aspire:
+To ensure that you install the latest version of the .NET Aspire workload, run the following [dotnet workload update](/dotnet/core/tools/dotnet-workload-update) command before you install .NET Aspire:
 
 ```dotnetcli
 dotnet workload update
@@ -125,10 +130,12 @@ When the .NET Aspire workload is installed, you'll see the following .NET Aspire
 ```Output
 These templates matched your input: 'aspire'
 
-Template Name                    Short Name      Language  Tags
--------------------------------  --------------  --------  -------------------------------------------------------
-.NET Aspire Application          aspire          [C#]      Common/.NET Aspire/Cloud
-.NET Aspire Starter Application  aspire-starter  [C#]      Common/.NET Aspire/Blazor/Web/Web API/API/Service/Cloud
+Template Name                    Short Name              Language  Tags
+-------------------------------  ----------------------  --------  -------------------------------------------------------
+.NET Aspire App Host             aspire-apphost          [C#]      Common/.NET Aspire/Cloud
+.NET Aspire Application          aspire                  [C#]      Common/.NET Aspire/Cloud/Web/Web API/API/Service
+.NET Aspire Service Defaults     aspire-servicedefaults  [C#]      Common/.NET Aspire/Cloud/Web/Web API/API/Service
+.NET Aspire Starter Application  aspire-starter          [C#]      Common/.NET Aspire/Blazor/Web/Web API/API/Service/Cloud
 ```
 
 To create a .NET Aspire project using the .NET CLI, use the `dotnet new` command and specify which template you would like to create.
